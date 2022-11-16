@@ -11,7 +11,7 @@ const Counter = () => {
 
     return (
         <div className="mt-5">
-            <h3>Counter: useState</h3>
+            <h3>Counter</h3>
             <span>Valor: {counter}</span>
             <br />
             {/* si dejaramos solo 'incrementar' estaríamos pasando el evento, por eso debemos hacer () => incrementar() */}

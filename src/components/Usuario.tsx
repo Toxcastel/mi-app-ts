@@ -23,12 +23,12 @@ const Usuario = () => {
     };
     return (
         <div className="mt-5">
-            <h3>Usuario: useState</h3>
+            <h3>Usuario</h3>
             <button onClick={login} className="btn btn-outline-primary">
                 Login
             </button>
+            {!user ? <pre>No hay usuario</pre> : <pre> {JSON.stringify(user)}</pre>}
             {/* <pre> se refiere a texto preformateado, se imprimirá tal como lo veamos. Usamos JSON.stringify para mostrar como string el valor del objeto user */}
-            <pre> {JSON.stringify(user)}</pre>
         </div>
     );
 };
