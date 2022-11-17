@@ -18,18 +18,33 @@ export const FormularioCustomHook = () => {
     //     })
     // };
 
-    const {formulario, handleChange} = useForm({email:'', nombre:''})
+    /* Para empezar a tipar el formulario, necesitamos crear la interface 
+        Luego a useForm le tenemos que pasar esa interface como tipo de dato genérico: useForm<FormData>
+        Posteriormente tiene que recibirlo en el hook, allá hay más info
+    */
+    interface FormData {
+        email: string;
+        nombre: string;
+        edad: number;
+    }
+
+    const { formulario, handleChange, nombre, email, edad } = useForm<FormData>({ email: "", nombre: "", edad: 0 });
 
     return (
         <form autoComplete="off">
             <div className="mb-3">
                 <label className="form-label">Email:</label>
-                <input type="email" className="form-control" name="email" onChange={handleChange} />
+                <input type="email" className="form-control" name="email" value={email} onChange={handleChange} />
             </div>
 
             <div className="mb-3">
                 <label className="form-label">Nombre:</label>
-                <input type="text" className="form-control" name="nombre" onChange={handleChange}/>
+                <input type="text" className="form-control" name="nombre" value={nombre} onChange={handleChange} />
+            </div>
+
+            <div className="mb-3">
+                <label className="form-label">Edad:</label>
+                <input type="text" className="form-control" name="edad" value={edad} onChange={handleChange} />
             </div>
 
             <pre>{JSON.stringify(formulario)}</pre>
