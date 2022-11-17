@@ -10,9 +10,10 @@ export const Formulario = () => {
     const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = target;
 
+        /* Es recomendable destructurar el valor actual del formulario al momento de setear un nuevo state, ya que puede tener más variables que las iniciales */
         setFormulario({
             ...formulario,
-            // hola de nuevo a
+            [name]: value
         })
     };
 
@@ -25,7 +26,7 @@ export const Formulario = () => {
 
             <div className="mb-3">
                 <label className="form-label">Nombre:</label>
-                <input type="text" className="form-control" name="nombre" />
+                <input type="text" className="form-control" name="nombre" onChange={handleChange}/>
             </div>
 
             <pre>{JSON.stringify(formulario)}</pre>
