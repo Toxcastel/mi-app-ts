@@ -12,7 +12,7 @@ export const Formulario = () => {
 
         setFormulario({
             ...formulario,
-            
+            // hola
         })
     };
 
