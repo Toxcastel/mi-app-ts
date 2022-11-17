@@ -9,6 +9,11 @@ export const Formulario = () => {
     /* Los eventos onChange son de tipo "ChangeEvent" en TS y dentro de ellos hay que especificar también el tipo interno. En el caso de los formularios, como lo es en este caso, debemos usar <HTMLInputElement> */
     const handleChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = target;
+
+        setFormulario({
+            ...formulario,
+            
+        })
     };
 
     return (
